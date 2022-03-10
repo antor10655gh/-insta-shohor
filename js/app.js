@@ -52,6 +52,7 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
     const image = post.image;
+    const userImage = post.userImage;
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
@@ -62,7 +63,8 @@ const createPost = (post) => {
                     target="_blank"
                     class="post__avatar"
                   >
-                    <img src="${image}" alt="User Picture" />
+                  // add userImage
+                    <img src="${userImage}" alt="User Picture" />
                   </a>
                   <a href="#" class="post__user">phero</a>
                 </div>
@@ -95,7 +97,9 @@ const createPost = (post) => {
 
                   <div class="post__indicators"></div>
 
-                  <button class="post__button post__button--align-right" onclick="reportPost(${post.id})">
+                  <button class="post__button post__button--align-right" onclick="reportPost(${
+                      post.id
+                  })">
                     <i class="fa-solid fa-ban"></i>
                   </button>
                 </div>
@@ -105,7 +109,7 @@ const createPost = (post) => {
                 <div class="post__infos">
                   <div class="post__likes">
                     <a href="#" class="post__likes-avatar">
-                      <img src="${image}" alt="User Picture" />
+                      <img src="${userImage}" alt="User Picture" />
                     </a>
 
                     <span>Liked by
